@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "Name": "Nodejs",
+    "Level": "Proficient",
+    "createdAt": "2026 Jan 30",
+    "updatedAt": "2026 Jan 30"
+  },
+   {
+    "id": 2,
+    "Name": "ReactJS",
+    "Level": "Beginner",
+    "createdAt": "2026 Jan 30",
+    "updatedAt": "2026 Jan 30"
+  },
+  {
+    "id": 3,
+    "Name": "MongoDB",
+    "Level": "Intermediate",
+    "createdAt": "2026 Jan 30",
+    "updatedAt": "2026 Jan 30"
+
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "id":1,
+    "Degree":"BE IT",
+    "Board":"Pokhara University",
+    "status":"Completed",
+    "createdAt":"2026 Jan 30",
+    "updatedAt":"2026 Jan 30"
+  },
+    {
+    "id":2,
+    "Degree":"+2",
+    "Board":"NEB",
+    "status":"Completed",
+    "createdAt":"2026 Jan 30",
+    "updatedAt":"2026 Jan 30"
+  }
+]

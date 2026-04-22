@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "Name":"ABC Pvt Ltd",
+    "Role":"Backend Developer",
+    "YearsOfExperience": 3,
+    "createdAt":"2026 Jan 30",
+    "updatedAt":"2026 Jan 30"
+  },
+    {
+    "id": 2,
+    "Name":"ABC Pvt Ltd",
+    "Role": "FrontEnd Dev",
+    "YearsOfExperience": 1,
+    "createdAt":"2026 Jan 30",
+    "updatedAt":"2026 Jan 30"
+  }
+]
