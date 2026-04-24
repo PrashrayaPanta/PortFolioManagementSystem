@@ -1,7 +1,7 @@
 import * as Admin from "./Admin";
 
-import * as Viewer from "./Viewer";
+import * as NormalUser from "./NormalUser";
 
 
 
-export {Admin, Viewer}
+export {Admin, NormalUser}

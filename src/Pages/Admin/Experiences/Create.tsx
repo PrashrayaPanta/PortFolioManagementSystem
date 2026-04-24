@@ -106,10 +106,7 @@ const Create = () => {
 
                                 <Card className="w-full">
                                     <CardHeader>
-                                        <CardTitle>Bug Report</CardTitle>
-                                        <CardDescription>
-                                            Help us improve by reporting bugs you encounter.
-                                        </CardDescription>
+                                        <CardTitle>Add Education</CardTitle>
                                     </CardHeader>
                                     <CardContent>
                                         <form id="form-rhf-demo" onSubmit={form.handleSubmit(onSubmit)}>

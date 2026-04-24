@@ -106,35 +106,11 @@ const Create = () => {
 
                                 <Card className="w-full">
                                     <CardHeader>
-                                        <CardTitle>Bug Report</CardTitle>
-                                        <CardDescription>
-                                            Help us improve by reporting bugs you encounter.
-                                        </CardDescription>
+                                        <CardTitle>About</CardTitle>
                                     </CardHeader>
                                     <CardContent>
                                         <form id="form-rhf-demo" onSubmit={form.handleSubmit(onSubmit)}>
                                             <FieldGroup>
-                                                <Controller
-                                                    name="title"
-                                                    control={form.control}
-                                                    render={({ field, fieldState }) => (
-                                                        <Field data-invalid={fieldState.invalid}>
-                                                            <FieldLabel htmlFor="form-rhf-demo-title">
-                                                                Bug Title
-                                                            </FieldLabel>
-                                                            <Input
-                                                                {...field}
-                                                                id="form-rhf-demo-title"
-                                                                aria-invalid={fieldState.invalid}
-                                                                placeholder="Login button not working on mobile"
-                                                                autoComplete="off"
-                                                            />
-                                                            {fieldState.invalid && (
-                                                                <FieldError errors={[fieldState.error]} />
-                                                            )}
-                                                        </Field>
-                                                    )}
-                                                />
                                                 <Controller
                                                     name="description"
                                                     control={form.control}

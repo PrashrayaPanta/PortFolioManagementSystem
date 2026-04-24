@@ -7,7 +7,7 @@ import { SectionCards } from "@/components/section-cards";
 import { SiteHeader } from "@/components/site-header";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 import { useLocation } from "react-router-dom";
-import ContactData from "../../ContactData.json"
+
 
 import * as React from "react"
 import { zodResolver } from "@hookform/resolvers/zod"
@@ -36,7 +36,6 @@ import {
 import {
     Card,
     CardContent,
-    CardDescription,
     CardFooter,
     CardHeader,
     CardTitle,
