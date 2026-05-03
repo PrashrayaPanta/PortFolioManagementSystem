@@ -52,12 +52,12 @@ export const updateSkill = (slug: string) => {
 
 export const getAbout = () => {
     try {
-        
+
 
     } catch (error) {
-        
+
         console.log(error);
-        
+
     }
 
 
@@ -66,16 +66,16 @@ export const getAbout = () => {
 
 export const createAbout = ({ }) => {
     try {
-            
+
 
 
     } catch (error) {
-        
+
         console.log(error);
-        
 
 
-        }
+
+    }
 
 
 
@@ -227,29 +227,35 @@ export const updateHero = () => {
 
 
 interface userLogin {
-
     email: string,
     password: string
-
-
 }
 
 //! user login
+export const userLogin = async ({ email, password }: userLogin) => {
+        const response = await http.post("/user/login", { email, password }, {
+            withCredentials: true
+        })
 
-export const userLogin = async({email, password}:userLogin) => {
-    try {   
+        return response
+}
+
+
+
+//! User Logout
+
+
+export const userLogout = async() => {
+    try {
+
+        http.get("/user/logout", { withCredentials: true })
         
-         const data = await  http.post("http://localhost:3000/user/login", {email, password})
-
-         console.log(data);
         
 
     } catch (error) {
-        console.log(error);
         
-        }
 
-
+    }
 
 
 }

@@ -7,15 +7,22 @@ import Layout from "./components/Layout";
 
 
 function App() {
+
+
+
+
+
+
+
   return (
     <BrowserRouter>
       <Routes>
 
         //! Normal User Layout
-        <Route path="/" element={<Layout/>} >
-          <Route path="" element={<Pages.Viewer.Home />} />
-          <Route path="login" element={<LoginForm />} />
-        </Route>
+        {/* <Route path="/" element={<Layout/>} > */}
+          <Route path="/" element={<Pages.NormalUser.Home />} />
+          <Route path="/login" element={<LoginForm />} />
+        {/* </Route> */}
 
 
         //! Loginned User Layout
