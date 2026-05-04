@@ -1,6 +1,12 @@
+import { useModelOpen } from "@/hooks/useModelOpen";
+
+
 const About = () => {
+
+  const { modalOpen } = useModelOpen();
+
   return (
-    <section className="py-20 px-6 bg-white" id="about">
+    <section className={`py-20 px-6 bg-white scroll-mt-20 ${modalOpen && "scroll-mt-60"}`} id="about">
       <div className="max-w-4xl mx-auto">
         {/* Heading */}
         <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center">

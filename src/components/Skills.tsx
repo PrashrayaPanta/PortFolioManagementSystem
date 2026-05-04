@@ -1,3 +1,4 @@
+import { useModelOpen } from "@/hooks/useModelOpen";
 import {
   FileCode2,        // HTML5
   SquareCode,       // CSS3
@@ -13,7 +14,10 @@ import {
   Terminal,         // General coding
 } from "lucide-react";
 
+
 const Skills = () => {
+  // For modal scroll adjustment
+   const { modalOpen } = useModelOpen();
   const skills = [
     { name: "HTML5", icon: <FileCode2 className="text-orange-600" size={32} /> },
     { name: "CSS3", icon: <SquareCode className="text-blue-600" size={32} /> },
@@ -29,7 +33,7 @@ const Skills = () => {
   ];
 
   return (
-    <section className="py-20 px-6 bg-gray-50" id="skills">
+    <section className={`py-20 px-6 bg-gray-50 lg:scroll-mt-20 ${modalOpen && "scroll-mt-40"}`} id="skills">
       <div className="max-w-5xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center">
           My Skills

@@ -1,6 +1,10 @@
+import { useModelOpen } from '@/hooks/useModelOpen';
 import React from 'react';
 
-const ContactInfo: React.FC = () => {
+const ContactInfo = () => {
+
+  const { modalOpen } = useModelOpen()
+
   const contacts = [
     {
       type: 'Email',
@@ -8,7 +12,7 @@ const ContactInfo: React.FC = () => {
       href: 'mailto:roshangautam@gautam-roshan.com.np',
     },
     {
-      type: 'Phone',
+      type: 'Phones',
       value: '+977 9848679873',
       href: 'tel:+9779848679873',
     },
@@ -30,7 +34,7 @@ const ContactInfo: React.FC = () => {
   ];
 
   return (
-    <div className="flex justify-center flex-col items-center p-6 my-20" id="contact">
+    <section className={`flex justify-center flex-col items-center p-6 my-20 lg:scroll-mt-20 ${modalOpen && "scroll-mt-60"}`} id="contact">
       <h2 className="text-2xl font-bold text-gray-900 mb-8  flex items-center justify-center">
         Contact
       </h2>
@@ -44,10 +48,10 @@ const ContactInfo: React.FC = () => {
             className="flex items-center  rounded-lg hover:bg-gray-50 transition-colors duration-200 group"
           >
             {/* Fixed width container for the type label */}
-            <div className="w-24 flex-shrink-0">
-              <p className="text-sm font-medium text-gray-500">{contact.type}</p>
+            <div className="w-24 flex-shrink-0 ">
+              <p className="text-sm font-medium text-5xl text-gray-500">{contact.type}</p>
             </div>
-            
+
             {/* Value text with consistent alignment */}
             <div className="flex-1">
               <p className="text-sm text-gray-900 bg-amber-200 inline-block px-2 py-0.5 rounded">
@@ -57,7 +61,7 @@ const ContactInfo: React.FC = () => {
           </a>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

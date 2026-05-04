@@ -1,8 +1,19 @@
+import { useLocation } from "react-router-dom";
 import PersonalPantaPhoto from "../assets/prashraya_pantaPhoto.jpg"
+import { useModelOpen } from "@/hooks/useModelOpen";
+useModelOpen
+
 
 const Hero = () => {
+
+
+  const {modalOpen} = useModelOpen()
+
+  // console.log(path);
+  
+
   return (
-    <section className="flex flex-col justify-center items-center text-center px-6 bg-gradient-to-br from-slate-50 to-gray-100 bg-green-300 pb-10 py-20">
+    <section className={`flex flex-col justify-center items-center text-center px-6 bg-gradient-to-br from-slate-50 to-gray-100 bg-green-300 pb-10 py-20 ${modalOpen && "py-60"}`} id="hero">
       {/* Name */}
 
       {/* Image */}
