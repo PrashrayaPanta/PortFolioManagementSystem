@@ -8,14 +8,30 @@ import { SiteHeader } from "@/components/site-header";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 import { useLocation } from "react-router-dom";
 
+
 import AboutData from "../../AboutData.json"
+import { useQuery } from "@tanstack/react-query";
+import Loading from "@/components/Loading";
+import { getAbout } from "@/api";
 
 
 const List = () => {
 
     const { pathname } = useLocation()
 
-    console.log(pathname);
+  console.log(pathname);
+  
+
+    const { data, isLoading, isSuccess, isError, error } = useQuery({ queryFn: getAbout, queryKey: ["getAbout"] })
+
+
+  if (isLoading) {
+    return <Loading />
+  }
+
+
+  console.log("The about me is", data);
+  
 
 
     return (
@@ -38,7 +54,7 @@ const List = () => {
                 {/* <div className="px-4 lg:px-6">
                   <ChartAreaInteractive />
                 </div> */}
-                <DataTable data={AboutData} page="aboutus" />
+                <DataTable data={[data.data]} page="aboutus" />
               </div>    
             </div>
           </div>

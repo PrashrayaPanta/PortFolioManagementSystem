@@ -7,17 +7,31 @@ import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 import { useLocation } from "react-router-dom";
 
 
-import SkillsData from "../../skillsdata.json";
+import { useQuery } from "@tanstack/react-query";
+import { getSkills } from "@/api";
+import Loading from "@/components/Loading";
+
 
 
 const List = () => {
 
+
+  
   console.log("I am insdie the edit Skills");
   
 
   const { pathname } = useLocation()
 
   console.log(pathname);
+
+
+    const { data, isLoading, isSuccess, isError, error } = useQuery({ queryFn: getSkills, queryKey: ["getSkill"] })
+
+
+  if (isLoading) {
+    return <Loading />
+  }
+
   
 
   const totalNoofSkills = 20;
@@ -41,7 +55,7 @@ const List = () => {
               {/* <div className="px-4 lg:px-6">
                 <ChartAreaInteractive />
               </div> */}
-              <DataTable data={SkillsData} page="skills" />
+              <DataTable data={data.data} page="skills" />
             </div>
           </div>
         </div>

@@ -9,7 +9,7 @@ import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 import { useLocation } from "react-router-dom";
 import HeroData from "../../heroData.json";
 import { useQuery } from "@tanstack/react-query";
-import { getHero } from "@/api";
+import { getAllCatgeory, getHero } from "@/api";
 import Loading from "@/components/Loading";
 
 
@@ -26,7 +26,7 @@ const List = () => {
   
 
   
-  const { data, isLoading, isSuccess, isError, error } = useQuery({ queryFn: getHero, queryKey: ["getHero"] })
+  const { data, isLoading, isSuccess, isError, error } = useQuery({ queryFn: getAllCatgeory, queryKey: ["getAllCategory"] })
   
 
   if (isLoading) {
@@ -35,16 +35,13 @@ const List = () => {
 
 
 
-  
-
-
 
 
 
   console.log(HeroData);
   
 
-  console.log("after the sucecs data is", data?.data);
+  console.log("after the sucecs data is", data);
   
 
   console.log("The query is loading", isLoading);
@@ -94,7 +91,7 @@ const List = () => {
                 {/* <div className="px-4 lg:px-6">
                   <ChartAreaInteractive />
                 </div> */}
-                <DataTable data={[data?.data.data]} page="hero" />
+                <DataTable data={data?.data} page="category" />
               </div>    
             </div>
           </div>

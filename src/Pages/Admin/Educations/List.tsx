@@ -8,6 +8,11 @@ import { SiteHeader } from "@/components/site-header";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 import { useLocation } from "react-router-dom";
 import EducationData from "../../EducationData.json"
+import { getEducation } from "@/api";
+import { useQuery } from "@tanstack/react-query";
+import Loading from "@/components/Loading";
+
+
 
 const List = () => {
 
@@ -15,7 +20,21 @@ const List = () => {
 
     console.log(pathname);
 
-    const totalNoofEducation = 20;
+  const totalNoofEducation = 20;
+  
+
+    const { data, isLoading, isSuccess, isError, error } = useQuery({ queryFn: getEducation, queryKey: ["geteducation"] })
+  
+
+  if (isLoading) {
+    return <Loading/>
+  }
+
+
+
+  
+
+
 
     return (
     <div>
@@ -37,7 +56,7 @@ const List = () => {
                 {/* <div className="px-4 lg:px-6">
                   <ChartAreaInteractive />
                 </div> */}
-                <DataTable data={EducationData} page="education" />
+                <DataTable data={data.data} page="education" />
               </div>    
             </div>
           </div>

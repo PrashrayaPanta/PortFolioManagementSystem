@@ -1,15 +1,31 @@
 import { useLocation } from "react-router-dom";
 import PersonalPantaPhoto from "../assets/prashraya_pantaPhoto.jpg"
 import { useModelOpen } from "@/hooks/useModelOpen";
-useModelOpen
+import { useQuery } from "@tanstack/react-query";
+import { getHero } from "@/api";
+import Loading from "./Loading";
+
+
 
 
 const Hero = () => {
 
 
-  const {modalOpen} = useModelOpen()
+  const { modalOpen } = useModelOpen()
+  
+    
+  const { data, isLoading, isSuccess, isError, error } = useQuery({ queryFn: getHero, queryKey: ["getHero"] })
+  
 
-  // console.log(path);
+  if (isLoading) {
+    return <Loading/>
+  }
+
+
+  console.log("The normal user part data is ", data?.data.data);
+  
+
+
   
 
   return (
@@ -19,27 +35,25 @@ const Hero = () => {
       {/* Image */}
       <div className="mt-2 mb-10">
         <img 
-          src={PersonalPantaPhoto}
+          src={`http://localhost:5000/${data?.data.data.img_path}`}
           alt="Prashraya Panta"
           className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover shadow-lg border-4  transition-all duration-300 hover:border-6 hover:scale-110 cursor-pointer"
         />
       </div>
 
       <h1 className="text-5xl md:text-7xl font-bold text-gray-800 mb-10">
-        Prashraya Panta
+        {data?.data.data.name}
       </h1>
 
       {/* Title */}
       <p className="text-xl md:text-2xl text-blue-600 font-medium mb-8">
-        Software Developer
+        {data?.data.data.title}
       </p>
 
       {/* Quote */}
       <div className="max-w-3xl mx-auto mb-12">
         <p className="text-lg md:text-xl text-gray-600 italic leading-relaxed">
-          "Life may be a meandering path but don't worry about it, rather enjoy it. 
-          It is about the journey, not the destination so explore all that comes your way, 
-          learn and grow from it, for this journey only happens once."
+         {data?.data.data.heroDescription}
         </p>
       </div>
 
